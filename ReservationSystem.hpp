@@ -8,8 +8,11 @@
 class ReservationSystem {
 
 private:
+    //quatidade de salas
     int room_count;
+    //capacidade de alunos de cada sala
     int* room_capacities;
+    
 
     // Estruturas internas escolhidas pelos alunos
     // para armazenar e gerenciar as reservas, os horários, ...
@@ -21,7 +24,6 @@ public:
 
     bool reserve(ReservationRequest request);
     bool cancel(std::string course_name);
-
     void printSchedule();
 
     // Outros métodos utilitários necessários

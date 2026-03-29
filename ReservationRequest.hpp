@@ -1,7 +1,5 @@
 #ifndef RESERVATIONREQUEST_HPP
 #define RESERVATIONREQUEST_HPP
-
-#include <iostream>
 #include <string>
 
 class ReservationRequest {
@@ -18,6 +16,7 @@ public:
     ReservationRequest(std::string course_name, std::string weekday, int start_hour, int end_hour, int student_count);
     ~ReservationRequest();
 
+    // GETTERS
     int getStartHour();
     int getEndHour();
     std::string getCourseName();
