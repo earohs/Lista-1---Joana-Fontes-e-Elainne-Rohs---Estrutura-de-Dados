@@ -24,8 +24,10 @@ g++ main.cpp ReservationSystem.cpp ReservationRequest.cpp -o reservation_system
 
 
 ## Organização interna dos dados
+Para armazenar as salas e as reservas, optamos por arrays dinâmicos. O ReservationSystem guarda um array de objetos Room, e cada sala guarda seu próprio array de objetos Reservation.
+Escolhemos o array dinâmico porque ele permite aumentar de tamanho durante a execução do programa — quando o array fica cheio, dobramos sua capacidade e copiamos os dados — e exige menos memória do que alocar um array fixo grande desde o início.
 ### Classe Room
-
+Classe criada para controlar as reservas.
 ### Verificações de erro
 No estudo de POO, é estabelecido como boa prática implementar as validações em setters, que deveriam ser declarados no construtor. No entanto, para esta modelagem, a criação de setters não é uma boa ideia, uma vez que não de deveria ser permitida a modificação de atributos da ```ReservationRquest```, fixos desde seu instanciamento, a fim de evitar conflitos de reservas.
-Dessa forma, as validações foram realizadas dentro do próprio construtor.
+Dessa forma, as validações foram realizadas dentro da função ```reserve``` de ```ReservationSystem```.

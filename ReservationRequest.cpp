@@ -3,14 +3,6 @@
 
 //Inicialização do construtor
 ReservationRequest::ReservationRequest(std::string course_name, std::string weekday, int start_hour, int end_hour, int student_count) {
-    //Validações
-    if(start_hour<7 or start_hour>20 or end_hour<8 or end_hour>21) {
-        std::cerr << "Horário do requerimento fora do período de funcionamento do sistema\n";
-    }
-    if(start_hour>end_hour) {
-        std::cerr << "Horário de início  deve ser anterior ao horário de término da reserva\n";
-    }
-    //Atributos
     this->course_name = course_name;
     this->weekday = weekday;
     this->start_hour = start_hour;

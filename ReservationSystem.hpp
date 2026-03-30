@@ -2,6 +2,7 @@
 #define RESERVATIONSYSTEM_HPP
 
 #include "ReservationRequest.hpp"
+#include "Room.hpp"
 #include <iostream>
 #include <string>
 
@@ -12,14 +13,13 @@ private:
     int room_count;
     //capacidade de alunos de cada sala
     int* room_capacities;
-    
 
     // Estruturas internas escolhidas pelos alunos
     // para armazenar e gerenciar as reservas, os horários, ...
-
+    std::string* room_names;
 public:
 
-    ReservationSystem(int room_count, int* room_capacities);
+    ReservationSystem(int room_count, int* room_capacities, std::string* room_names);
     ~ReservationSystem();
 
     bool reserve(ReservationRequest request);
@@ -28,6 +28,8 @@ public:
 
     // Outros métodos utilitários necessários
     // para auxiliar nas funções requisitadas
+    //void confirm_reservation();
+    void setRooms(int* room_capacities, std::string* room_names, int room_count);
 };
 
 #endif
