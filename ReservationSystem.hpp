@@ -1,35 +1,23 @@
 #ifndef RESERVATIONSYSTEM_HPP
 #define RESERVATIONSYSTEM_HPP
-
-#include "ReservationRequest.hpp"
-#include "Room.hpp"
-#include <iostream>
 #include <string>
+#include "Reservation.hpp"
+#include "Room.hpp"
+#include "ReservationRequest.hpp"
 
+// Gerencia todas as salas e reservas do sistema
 class ReservationSystem {
-
 private:
-    //quatidade de salas
     int room_count;
-    //capacidade de alunos de cada sala
-    int* room_capacities;
+    Room* rooms;
 
-    // Estruturas internas escolhidas pelos alunos
-    // para armazenar e gerenciar as reservas, os horários, ...
-    std::string* room_names;
 public:
-
-    ReservationSystem(int room_count, int* room_capacities, std::string* room_names);
+    ReservationSystem(int room_count, int* room_capacities);
     ~ReservationSystem();
 
-    bool reserve(ReservationRequest request);
-    bool cancel(std::string course_name);
-    void printSchedule();
-
-    // Outros métodos utilitários necessários
-    // para auxiliar nas funções requisitadas
-    //void confirm_reservation();
-    void setRooms(int* room_capacities, std::string* room_names, int room_count);
+    bool reserve(ReservationRequest request); // tenta realizar uma reserva na primeira sala disponível
+    bool cancel(std::string course_name); // cancela a reserva de uma disciplina pelo nome
+    void printSchedule(); // exibe a grade completa ordenada por sala, dia e horário
 };
 
 #endif

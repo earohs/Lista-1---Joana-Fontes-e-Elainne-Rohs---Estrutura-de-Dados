@@ -1,30 +1,29 @@
 #ifndef ROOM_HPP
 #define ROOM_HPP
 #include <string>
-class Room {
+#include "Reservation.hpp"
 
+// Representa uma sala de aula no sistema
+class Room {
 private:
-    // nome da sala
-    std::string room_name;
-    int room_capacity;
-    // dinâmicas listas dos horários da sala para determinado dia
-    int* occupied_monday;
-    int* occupied_tuesday;
-    int* occupied_wednesday;
-    int* occupied_thursday;
-    int* occupied_friday;
+    int capacity;
+    int count;
+    int max_reservations;
+    Reservation* reservations;
 
 public:
-    Room(std::string room_name, int room_capacity);
+    Room& operator=(const Room& other);
+    Room();
+    Room(int capacity);
     ~Room();
-
-    //getters
-    std::string getRoomName();
+// Getters
     int getCapacity();
+    int getCount();
 
-    void append_monday();
-
+    bool addReservation(Reservation reservation);
+    bool removeReservation(std::string course_name); 
+    void sortReservations();
+    Reservation getReservation(int index);
 };
-
 
 #endif
