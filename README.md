@@ -12,14 +12,16 @@ Caso exista alguma sala disponível que atenda às condições da solicitação,
 * Também, se o horário de saída for cronologicamente antes ou simultâneo ao horário de entrada. 
 
 ## Instruções de compilação
-
+Para compilar o código rode o seguinte comando no terminal:
 ```
 g++ main.cpp ReservationSystem.cpp ReservationRequest.cpp Room.cpp Reservation.cpp -o reservation_system
 ```
+Será gerado um arquivo ```reservation_system.exe```, basta executar o seguinte comando:
 
 ```
 .\reservation_system.exe
 ```
+Com isso, aparecerá no console a interface que criamos.
 
 ## Instruções de execução
 * Para realizar uma reserva, o usuário deve informar a matéria ministrada, escolher o dia da semana da reserva, os horários de entrada e saída da sala e a capacidade máxima de alunos requerida.
