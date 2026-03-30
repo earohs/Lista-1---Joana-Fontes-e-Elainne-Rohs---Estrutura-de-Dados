@@ -14,7 +14,11 @@ Caso exista alguma sala disponível que atenda às condições da solicitação,
 ## Instruções de compilação
 
 ```
-g++ main.cpp ReservationSystem.cpp ReservationRequest.cpp -o reservation_system
+g++ main.cpp ReservationSystem.cpp ReservationRequest.cpp Room.cpp Reservation.cpp -o reservation_system
+```
+
+```
+.\reservation_system.exe
 ```
 
 ## Instruções de execução

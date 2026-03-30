@@ -11,7 +11,7 @@ ReservationRequest::ReservationRequest(std::string course_name, std::string week
 }
 //Destrutor: como não há, por enquanto, nada a destruir, exceto a prórpia classe, ele não tem conteúdo
 ReservationRequest::~ReservationRequest() {
-    std::cout << "reservationrequest destruído" << std::endl; // linha apenas para verificação, depois será apagada
+    
 }
 //Getters
 int ReservationRequest::getStartHour() {
